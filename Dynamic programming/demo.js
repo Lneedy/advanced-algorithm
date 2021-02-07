@@ -46,5 +46,15 @@ function minEditDistance (str, target) {
   return res
 
 }
-
-minEditDistance('ma', 'mou')
+let limit = 2
+let dict = ['active', 'alive', 'dative', 'native', 'actives', 'act', 'math', 'mouth', 'aboundon']
+let input = 'ative'
+let arr = []
+for (let i = 0; i < dict.length; i++) {
+  let distance = minEditDistance(input, dict[i])
+  if (distance <= limit) {
+    arr.push(dict[i])
+  }
+}
+// ["active", "alive", "dative", "native", "actives"]
+console.log('%cdemo.js line:60 arr', 'color: #007acc;', arr);
